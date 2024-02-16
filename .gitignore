@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 build
-accountDB
+accountDB.sqlite3
 
 /dist
 dist-ssr
