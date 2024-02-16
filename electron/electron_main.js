@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow,Menu } = require("electron");
 const path = require("path");
 const { Dweb2FA } = require("./2FA/Dweb2FA");
 const dweb2fa = new Dweb2FA();
@@ -6,25 +6,28 @@ const dweb2fa = new Dweb2FA();
 const createWindow = () => {
   // 创建浏览窗口
   const mainWindow = new BrowserWindow({
-    width: 1080,
-    height: 720,
-    backgroundColor: "#ffffff00",
+    width: 640,
+    height: 940,
     icon: path.join(__dirname, './imgs/Dweb.png'),
-    frame: false,
+    // frame: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      webSecurity: false,
     },
   });
 
   // 隐藏默认菜单
-  // Menu.setApplicationMenu(null);
+  Menu.setApplicationMenu(null);
+
+  // 打开开发工具
+  // mainWindow.webContents.openDevTools()
 
   // 加载 index.html
   // mainWindow.loadFile('index.html')
-  mainWindow.loadURL("http://localhost:5173");
+  mainWindow.loadFile(path.join(__dirname, './dist/index.html'))
+  // mainWindow.loadURL("http://localhost:5173");
 
-  // 打开开发工具
-  mainWindow.webContents.openDevTools()
+  
 };
 
 // 这段程序将会在 Electron 结束初始化

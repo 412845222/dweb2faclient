@@ -21,7 +21,7 @@ export default defineComponent({
       default:''
     }
   },
-  setup(props,context) {
+  setup(props) {
     const labelFontSize = ref<number>(14)
 
     onMounted(() => {
