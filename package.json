@@ -9,7 +9,7 @@
   },
   "description": "Dweb 2FA Client",
   "license": "MIT",
-  "homepage": "https://www.dweb.club",
+  "homepage": "https://github.com/412845222/dweb2faclient",
   "main": "electron/electron_main.js",
   "scripts": {
     "dev": "vite",
