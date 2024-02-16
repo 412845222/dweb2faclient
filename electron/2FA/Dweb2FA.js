@@ -2,7 +2,7 @@ const { ipcMain } = require("electron");
 const sqlite3 = require("sqlite3").verbose();
 const otplib = require("otplib");
 class Dweb2FA {
-  db = new sqlite3.Database("accountDB");
+  db = new sqlite3.Database("accountDB.sqlite3");
   constructor(option) {
     ipcMain.on("dweb2fa", this.msgToRenderer);
     this.init();
