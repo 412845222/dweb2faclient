@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282C34;
+  scrollbar-width: none; /* 隐藏滚动条 */
+  overflow: hidden; /* 隐藏滚动条 */
+  -webkit-overflow-scrolling: touch; /* 提高滚动性能 */
+}
+.panel-name {
+  -webkit-app-region: drag!important; /* 允许拖动窗口 */
+}
